@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta LipoFite PRO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            text-align: center;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .coupon {
+            background-color: #fff;
+            padding: 20px;
+            border: 3px dashed #333;
+            margin: 20px auto;
+            position: relative;
+            max-width: 400px;
+            width: 80%;
+        }
+
+        .coupon .barcode-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .coupon .barcode {
+            display: block;
+            margin-right: 10px;
+            height: 50px;
+        }
+
+        .coupon .highlight {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .coupon p {
+            margin: 10px 0;
+            line-height: 30px;
+        }
+
+        .coupon .small-text {
+            font-size: 12px;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .frasco {
+            width: 350px;
+            margin-bottom: 20px;
+        }
+
+        .benefits {
+            text-align: left;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .benefits h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .benefits ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .benefits ul li {
+            background: url('check.png') no-repeat left center;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 22px;
+            margin-left: 10px;
+        }
+
+        .cta {
+            background-color: #ffc107;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .benefits img{
+            width: 18px;
+        }
+
+        .topo h1{
+            color: #fff;
+            display: inline-block;
+            margin: 10px;
+            font-size: 25px;
+        }
+
+        .hls{
+            color: #fff;
+            font-size: 30px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .ps{
+            font-size: 25px;
+            margin: 10px;
+            margin: 20px 10px;
+        }
+
+        @media (min-width: 600px) {
+            .product {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .frasco {
+                margin: 0 20px 0 0;
+            }
+
+            .benefits li {
+                margin-left: 0px;
+            }
+
+            .benefits h2 {
+                text-align: left;
+            }
+        }
+
+        /* Bloco de Oferta */
+
+        .offers-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: #eaf0f6;
+        }
+
+        .offer {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .offer-header {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 40px 10px;
+            border-radius: 0px 0px 30px 30px;
+        }
+
+        .offer-header.yellow {
+            background-color: #E7BB3E;
+        }
+
+        .offer-header.blue {
+            background-color: #2059AA;
+            color: #fff;
+        }
+
+        .offer-details {
+            padding: 15px;
+        }
+
+        .offer-details p {
+            margin: 10px 0;
+            font-size: 25px;
+        }
+
+        .offer-details s{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .offer-details button {
+            background-color: #E7BB3E;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 40px;
+            cursor: pointer;
+            margin-top: 15px;
+            animation: pulse 1.5s infinite alternate !important;
+        }
+
+        .offer img{
+            width: 100%;
+        }
+
+        .offer:nth-child(2) .offer-details button {
+            background-color: #2059AA;
+            color: #fff;
+        }
+
+        .offer:nth-child(3) .offer-details button {
+            background-color: #2059AA;
+            color: #fff;
+        }
+
+        .price {
+            font-size: 40px!important;
+            font-weight: 800;
+            padding-bottom: 20px;
+        }
+
+        .price span{
+            font-size: 30px;
+            color: gray;
+            font-weight: 600;
+        }
+
+        .econ {
+            color: green;
+            font-weight: 700;
+        }
+
+        @media (min-width: 600px) {
+            .offers-container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .offer {
+                width: 30%;
+            }
+
+            .offer-details p {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+            .offer-details s{
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            .offer-details button {
+                font-size: 30px;
+            }
+        }
+
+        /* END Bloco de Oferta */
+
+        /* FAQ */
+        .faq-container {
+            padding: 20px;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .faq-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 25px;
+            line-height: 1.5;
+            border-bottom: 5px solid #d5d5d5;
+            padding-bottom: 10px;
+        }
+
+        @media (min-width: 600px) {
+            .faq-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px;
+            }
+
+            .faq-item {
+                margin-bottom: 30px;
+            }
+
+            .faq-item h3 {
+                font-size: 30px;
+            }
+
+            .faq-item p {
+                font-size: 20px;
+            }
+        }
+        /*END FAQ*/
+
+        /* Footer */
+        /* Estilos principais para mobile */
+        .footer-container {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section img {
+            width: 200px;
+            display: block;
+            height: auto;
+            margin: 10px auto;
+        }
+
+        .footer-section button {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .footer-section.duvidas button {
+            background-color: #28a745;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .copyright {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .copyright a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Media query para desktop */
+        @media (min-width: 768px) {
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px;
+            }
+
+            .footer-section {
+                margin-bottom: 30px;
+            }
+
+            .footer-section img {
+                width: 170px;
+            }
+
+            .footer-section h3 {
+                font-size: 18px;
+            }
+
+            .footer-section button {
+                font-size: 16px;
+            }
+
+            .footer-bottom {
+                font-size: 14px;
+            }
+
+            .footer-bottom a {
+                margin: 0 10px;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 40px 20px;
+            }
+
+            .footer-section {
+                margin-bottom: 0;
+                width: 30%;
+            }
+
+            .footer-bottom {
+                flex-basis: 100%;
+                text-align: center;
+            }
+        }
+        /* END Footer */
+
+        @keyframes pulse{
+              0%,100%{transform:scale(.9);opacity:.9;}
+              50%{transform:scale(1);opacity:1;}
+              }
+              @-webkit-keyframes pulse{
+              0%,100%{-webkit-transform:scale(.95);opacity:.7}
+              50%{-webkit-transform:scale(1);opacity:1}
+            } 
+
+    </style>
+</head>
+<body>
+    <div style="background: #000;position: fixed;top: 0;z-index: 10000;" class="container">
+        <div class="topo">
+            <h1>LipoFite PRO</h1><a style="margin: 10px;padding: 10px;font-size: 15px;" class="cta">EXPERIMENTAR AGORA</a>
+        </div>
+    </div>
+    <div style="background: #2e7aa7;padding-top:100px" class="container">
+        <section>
+            <div style="animation: pulse 1.5s infinite alternate !important;" class="coupon">
+                <div class="header">
+                    <h1>PAGAMENTO POR BOLETO LIBERADO!</h1>
+                </div>
+                <p>GANHE UM <span style="font-size: 20px;" class="highlight"><br>FRASCO EXTRA<br></span> NA SUA COMPRA</p>
+                <p>VÁLIDOS PELOS PRÓXIMOS <span class="highlight">15 MINUTOS</span></p>
+
+                <div class="barcode-section">
+                    <img class="barcode" src="img/bar-code.png" alt="Código de Barras">
+                    <p style="line-height: normal;" class="small-text">VOCÊ <span style="color: red;" class="highlight">NÃO</span> VERÁ ESSA OFERTA NOVAMENTE</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <section>
+            <div class="product">
+                <img class="frasco" src="img/1pts.png" alt="LipoFite PRO Frasco">
+                <div class="benefits">
+                    <h2>REDUZA AS RUGAS E LINHAS DE EXPRESSÕES E RECUPERE SUA AUTO ESTIMA</h2>
+                    <ul>
+                        <li><img src="img/check-zul.png"> Reduz as linhas de expressões</li>
+                        <li><img src="img/check-zul.png"> Reduz as rugas</li>
+                        <li><img src="img/check-zul.png"> Combate bactérias devoradoras de Colágeno</li>
+                        <li><img src="img/check-zul.png"> Reduz as bolsas caídas</li>
+                        <li><img src="img/check-zul.png"> Pele mais Firme</li>
+                    </ul>
+                    <a style="animation: pulse 1.5s infinite alternate !important;" onclick="scrollToBestOffer()" class="cta">SIM, QUERO EXPERIMENTAR AGORA<br><span style="font-weight:400">CLIQUE AQUI E GARANTA SEU KIT COM DESCONTO</a>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+    <div style="background: #2E7AA7;" class="container">
+        <section>
+            <h1 class="hls">RECOMENDADO POR ESPECIALISTAS E APROVADO PELA ANVISA</h1>
+        </section>
+    </div>
+    <div class="container">
+        <section>
+            <img src="img/anvisa.jpg">
+            <p class="ps">O LipoFite PRO foi aprovado pela ANVISA nos termos da RDC 240 de 26/07/2018, sendo dispensado de registro, pois é avaliado como 100% Seguro para o consumo da população por este órgão.</p>
+            
+        </section>
+    </div>
+
+    <div style="background: #2E7AA7;" class="container">
+        <section>
+            <h1 class="hls">GARANTIMOS 60 DIAS INCRÍVEIS, SEM EFEITOS COLATERAIS, OU VOCÊ NÃO PAGA NADA!</h1>
+        </section>
+    </div>
+    <div class="container">
+        <section class="anvisa">
+            <img style="width:200px;margin: 20px" src="img/garantia.avif">
+            <p class="ps">O LipoFite PRO® é blindado por uma garantia de reembolso de 100% de 60 dias completos a partir da sua compra. Se você não estiver totalmente satisfeito com o produto, seus resultados ou sua experiência nos primeiros 60 dias, basta nos informar enviando um e-mail para contato@lipofitepro.com e nós lhe daremos um reembolso total dentro de 48 horas do valor total. É isso mesmo, basta devolver todos os frascos do produto, sendo cheios e/ou vazios, a qualquer momento dentro de 60 dias da sua compra e você receberá um reembolso total. Esse é o tamanho da nossa confiança no produto LipoFite PRO®. Então, solicite o seu kit ainda hoje, sem risco algum. Nós garantimos os seus resultados com o nosso próprio dinheiro.</p>
+            <img style="max-width: 500px;width: 100%;" src="img/3pts.png">       
+        </section>
+    </div>
+    <div style="background: #2E7AA7;" class="container">
+        <section>
+            <h1 class="hls">ESCOLHA O SEU PACOTE ABAIXO</h1>
+            <p style="color: #fff;font-size: 25px;">RECOMENDAMOS O TRATAMENTO DE 4 A 6 MESES PARA O EFEITO TOTAL E DURADOURO</p>
+        </section>
+    </div>
+    <div style="background-color: #eaf0f6;padding-bottom: 30px;" class="container">
+        <h1>Compra Única</h1>
+        <section style="max-width: 1150px" class="offers-container">
+            <div id="best-offer" class="offer">
+                <div style="color: #fff" class="offer-header yellow">71% OFF<br>PAGUE 3 LEVE 6</div>
+                <img src="img/6pts.png" alt="6 bottles">
+                <div class="offer-details">
+                    <p class="price"><span>Você paga</span><br>12x R$ 37,14</p>
+                    <p>TOTAL: <s>R$618,00</s> R$309,00</p>
+                    <p class="econ">Você Economiza: R$309,00<br>+ FRETE GRÁTIS</p>
+                    <button style="color: #fff">Comprar agora</button>
+                </div>
+            </div>
+            <div class="offer">
+                <div class="offer-header blue">71% OFF<br>PAGUE 2 LEVE 4</div>
+                <img src="img/4pts.png" alt="4 bottles">
+                <div class="offer-details">
+                    <p class="price"><span>Você paga</span><br>12x R$ 29,11</p>
+                    <p>TOTAL: <s>R$578,00</s> R$289,00</p>
+                    <p class="econ">Você Economiza: R$289,00<br>+ FRETE GRÁTIS</p>
+                    <button>Comprar agora</button>
+                </div>
+            </div>
+            <div class="offer">
+                <div class="offer-header blue">71% OFF<br>PAGUE 1</div>
+                <img src="img/1pts.png" alt="1 bottle">
+                <div class="offer-details">
+                    <p class="price"><span>Você paga</span><br>6x R$ 42,42</p>
+                    <p>TOTAL: <s>R$458,00</s> R$229,00</p>
+                    <p class="econ">Você Economiza: R$229,00<br>+ FRETE GRÁTIS</p>
+                    <button>Comprar agora</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div style="background: #2E7AA7;padding: 30px 0px;" class="container">
+        <section>
+            <h1 class="hls">PERGUNTAS FREQUÊNTES</h1>
+        </section>
+    </div>
+    <div class="container">
+        <section class="faq-container">
+            <div class="faq-item">
+                <h3>O QUE É O LipoFite PRO®?</h3>
+                <p>O LipoFite PRO® é um produto de rejuvenescimento facial 100% natural, seguro e eficaz. Milhares de pessoas fazem o tratamento com o LipoFite PRO® todos os dias e não recebemos nenhuma reclamação sobre efeitos colaterais. Cada frasco é fabricado aqui no Brasil em uma fábrica de última geração aprovada pela ANVISA e que possui o índice máximo de excelência e qualidade na fabricação. Você pode ter a tranquilidade de saber que está utilizando um produto seguro e de alta qualidade em sua rotina de cuidados com a pele.</p>
+            </div>
+            <div class="faq-item">
+                <h3>QUAL O PACOTE MAIS VENDIDO?</h3>
+                <p>O pacote mais vendido do LipoFite PRO® é de 5 frascos para 5 meses de tratamento, pois seus ingredientes naturais se acumulam na pele e proporcionam resultados mais duradouros. Recomendamos que escolha esse pacote para obter os melhores resultados. Nossos pesquisadores observaram os melhores resultados no tratamento de rejuvenescimento facial. Com o uso contínuo do LipoFite PRO®, você pode obter uma pele mais saudável e jovem por mais tempo. Aproveite a oferta e tenha resultados incríveis em sua rotina de cuidados com a pele.</p>
+            </div>
+            <div class="faq-item">
+                <h3>TEM CONTRA-INDICAÇÃO OU EFEITO COLATERAL?</h3>
+                <p>O LipoFite PRO® é um produto de rejuvenescimento facial natural e não causa nenhum efeito colateral, sendo indicado para qualquer pessoa. No entanto, no caso de pessoas com doenças preexistentes ou que utilizam algum medicamento regularmente, é recomendado consultar um médico antes de iniciar o uso do produto. Dessa forma, você pode ter certeza de que o LipoFite PRO® é seguro e adequado para sua rotina de cuidados com a pele. Não se esqueça de verificar com seu médico antes de começar qualquer tratamento de beleza.</p>
+            </div>
+            <div class="faq-item">
+                <h3>COMO FAZER O USO DO LipoFite PRO®?</h3>
+                <p>É bem simples! Basta colocar um pouco do LipoFite PRO em sua mão, esfregar e passar no rosto suavemente de forma circular.</p>
+            </div>
+            <div class="faq-item">
+                <h3>A COMPOSIÇÃO É NATURAL?</h3>
+                <p>Sim, a composição do LipoFite PRO® é feita de ingredientes 100% naturais, seguros à saúde e testados clinicamente. Nosso produto foi formulado com cuidado para garantir que os ingredientes sejam gentis com a pele, mas, ao mesmo tempo oferecem resultados eficazes no rejuvenescimento facial. Com o LipoFite PRO®, você pode ter a tranquilidade de saber que está utilizando um produto seguro e confiável em sua rotina de cuidados com a pele.</p>
+            </div>
+            <div class="faq-item">
+                <h3>EM QUANTO TEMPO POSSO VER OS RESULTADOS?</h3>
+                <p>Os resultados do LipoFite PRO® variam de acordo com o organismo de cada pessoa, mas muitos de nossos clientes relatam notar sinais de melhora na aparência da pele já nos primeiros dias de uso. Com sua fórmula natural e eficaz, LipoFite PRO® pode ajudar a reduzir a aparência de linhas finas e rugas, melhorando a textura da pele e proporcionando uma aparência mais jovem e radiante. Experimente você mesmo e comece a desfrutar dos benefícios do rejuvenescimento facial com LipoFite PRO®.</p>
+            </div>
+            <div class="faq-item">
+                <h3>QUAL PRAZO DE ENTREGA?</h3>
+                <p>O prazo médio de entrega do LipoFite PRO® para o Brasil é de 5 a 12 dias úteis (prazo dos Correios). Nosso produto só é enviado após a confirmação do pagamento pelo sistema administrador do seu cartão de crédito. Estamos comprometidos em garantir uma entrega rápida e adequada aos nossos clientes, garantindo que seu pedido seja entregue o mais rápido possível e em perfeitas condições. Se você deseja melhorar a aparência da sua pele com LipoFite PRO®, basta fazer o pedido agora e aguardar a entrega rápida e confiável do produto.</p>
+            </div>
+        </section>
+    </div>
+    <div style="background:#EEF0F4" class="container">
+        <section style="text-align:center;padding: 30px 10px;">
+            <img style="width: 100%;max-width: 500px;" src="img/empresas.png">
+            <p style="font-size: 20px;">A venda do do LipoFite PRO através de qualquer outro site está <b>PROIBIDA</b> e pode colocar a sua <b>SAÚDE EM RISCO</b>. Não compre falsificações e garanta um produto de qualidade comprando <b>APENAS</b> através deste site oficial.</p>
+        </section>
+
+    </div>
+    <div style="background:#000" class="container">
+        <section class="footer-container">
+            <div class="footer-section pagamento">
+                <h3>FORMAS DE PAGAMENTO</h3>
+                <img style="border-radius:10px" src="img/pagamentos.webp" alt="Formas de Pagamento">
+                <h3>MÉTODOS DE ENTREGA</h3>
+                <img style="max-width: 200px;" src="img/correios.webp" alt="Métodos de Entrega">
+                <button>RASTRAR PEDIDO</button>
+            </div>
+            <div class="footer-section duvidas">
+                <h3>DÚVIDAS</h3>
+                <p>Fale conosco aqui:</p>
+                <p>contato@lipofitepro.com</p>
+                <button>TIRE SUAS DÚVIDAS</button>
+            </div>
+            <div class="footer-section seguro">
+                <h3>SITE 100% SEGURO</h3>
+                <img src="img/seguro.webp" alt="Site 100% Seguro">
+            </div>
+        </section>
+        <div class="copyright">
+            <p>© COPYRIGHT 2024</p>
+            <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Política de Troca e Reembolso</a> | <a href="#">Formulário de Contato</a></p>
+        </div>
+    </div>
+
+    <script>
+        function scrollToBestOffer() {
+            const element = document.getElementById('best-offer');
+            if (element) {
+                const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 2000;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+
+                function ease(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+
+                requestAnimationFrame(animation);
+            }
+        }
+    </script>
+</body>
+</html>
